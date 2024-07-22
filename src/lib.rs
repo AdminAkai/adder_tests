@@ -42,7 +42,21 @@ mod tests {
 
     #[test]
     fn it_adds_two() {
+        assert_eq!(10, add_two(8));
+    }
+
+    #[test]
+    fn add_two_and_two() {
         assert_eq!(4, add_two(2));
+    }
+
+    #[test]
+    fn add_three_and_two() {
+        assert_eq!(5, add_two(3));
+    }
+    #[test]
+    fn one_hundred() {
+        assert_eq!(102, add_two(100));
     }
 
     #[test]
@@ -87,6 +101,16 @@ mod tests {
             Ok(())
         } else {
             Err(String::from("two plus two does not equal four"))
+        }
+    }
+
+    #[test]
+    #[ignore]
+    fn expensive_test() -> Result<(), String> {
+        if 100 == 100 {
+            Ok(())
+        } else {
+            Err(String::from("100 does not equal 100"))
         }
     }
 }
